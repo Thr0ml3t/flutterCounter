@@ -82,10 +82,10 @@ class Counter extends StatelessWidget {
           new SizedBox(
             width: buttonSize,
             height: buttonSize,
-            child: RaisedButton(
+            child: IconButton(
               onPressed: _decrementCounter,
               color: color,
-              child: Icon(Icons.remove),
+              icon: Icon(Icons.remove),
             )
           ),
           new Container(
@@ -98,10 +98,10 @@ class Counter extends StatelessWidget {
           new SizedBox(
             width: buttonSize,
             height: buttonSize,
-            child: RaisedButton(
+            child: IconButton(
               onPressed: _incrementCounter,
               color: color,
-              child: Icon(Icons.add),
+              icon: Icon(Icons.add),
             )
           ),
         ],
