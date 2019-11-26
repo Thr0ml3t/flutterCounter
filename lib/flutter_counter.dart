@@ -82,13 +82,11 @@ class Counter extends StatelessWidget {
           new SizedBox(
             width: buttonSize,
             height: buttonSize,
-            child: FloatingActionButton(
+            child: RaisedButton(
               onPressed: _decrementCounter,
-              elevation: 2,
-              tooltip: 'Decrement',
+              color: color,
               child: Icon(Icons.remove),
-              backgroundColor: color,
-            ),
+            )
           ),
           new Container(
             padding: EdgeInsets.all(4.0),
@@ -100,13 +98,11 @@ class Counter extends StatelessWidget {
           new SizedBox(
             width: buttonSize,
             height: buttonSize,
-            child: FloatingActionButton(
+            child: RaisedButton(
               onPressed: _incrementCounter,
-              elevation: 2,
-              tooltip: 'Increment',
+              color: color,
               child: Icon(Icons.add),
-              backgroundColor: color,
-            ),
+            )
           ),
         ],
       ),
