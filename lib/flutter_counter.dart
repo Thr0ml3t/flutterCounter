@@ -1,5 +1,3 @@
-library counter;
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -20,7 +18,7 @@ class Counter extends StatelessWidget {
     this.color,
     this.textStyle,
     this.step = 1,
-    this.buttonSize = 25,
+    this.buttonSize = 30,
   })  : assert(initialValue != null),
         assert(minValue != null),
         assert(maxValue != null),
@@ -79,43 +77,34 @@ class Counter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          new SizedBox(
-            width: buttonSize,
-            height: buttonSize,
-            child: Ink(
-              decoration: ShapeDecoration(
-                color: color,
-                shape: CircleBorder()
-              ),
-              child: IconButton(
-              onPressed: _decrementCounter,
+          GestureDetector(
+            onTap: _decrementCounter,
+            child: Container(
+              width: buttonSize,
+              height: buttonSize,
               color: color,
-              icon: Icon(Icons.remove),
+              padding: EdgeInsets.all(2.5),
+              child: Icon(Icons.remove),
             ),
-            )
           ),
-          new Container(
+          Container(
+            color: color,
             padding: EdgeInsets.all(4.0),
-            child: new Text(
+            child: Text(
                 '${num.parse((selectedValue).toStringAsFixed(decimalPlaces))}',
                 style: textStyle
             ),
           ),
-          new SizedBox(
-            width: buttonSize,
-            height: buttonSize,
-            child: Ink(
-              decoration: ShapeDecoration(
-                color: color,
-                shape: CircleBorder()
-              ),
-              child: IconButton(
-              onPressed: _incrementCounter,
+          GestureDetector(
+            onTap: _incrementCounter,
+            child: Container(
+              width: buttonSize,
+              height: buttonSize,
               color: color,
-              icon: Icon(Icons.add),
+              padding: EdgeInsets.all(2.5),
+              child: Icon(Icons.add),
             ),
-            )
-          ),
+          )
         ],
       ),
     );
